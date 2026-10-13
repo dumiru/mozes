@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ====== FAVICON LINK ====== -->
+  <link rel="icon" type="image" href="https://ik.imagekit.io/mozes/Logos/fav"></link>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Coming Soon - Mozes Growth Agency</title>
+  <meta name="description" content="This service is currently pending and will be available soon. Subscribe to the Mozes Growth Agency newsletter to get notified when it launches.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- ====== ALL STYLES ====== -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- ====== PAGE-SPECIFIC STYLES ====== -->
+  <style>
+    .pending-hero {
+      padding: 160px 0 90px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+    .pending-hero .wrap { max-width: 720px; }
+    .pending-icon {
+      width: 74px;
+      height: 74px;
+      margin: 0 auto 26px;
+      border-radius: 50%;
+      background: var(--grad);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pending-icon svg { width: 32px; height: 32px; stroke: #fff; fill: none; }
+    .pending-hero .eyebrow { display: flex; justify-content: center; }
+    .pending-hero .section-title { margin: 0 0 16px; }
+    .pending-hero .section-sub { margin: 0 auto 34px; text-align: center; }
+    .pending-hero .btn-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .pending-newsletter { background: var(--white); }
+    .pending-newsletter .wrap { max-width: 560px; text-align: center; }
+    .pending-newsletter .head-row { justify-content: center; text-align: center; display: block; }
+    .pending-newsletter .section-sub { margin: 0 auto 8px; }
+
+    .pending-note {
+      font-size: 13px;
+      color: var(--ink-soft);
+      margin-top: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== NAVBAR (injected by navbar.js) ====== -->
+  <header class="navbar" id="navbarRoot"></header>
+
+  <main id="home">
+
+    <!-- ============================================================
+         SERVICE PENDING NOTICE
+         ============================================================ -->
+    <section class="pending-hero">
+      <div class="wrap">
+        <div class="pending-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.8"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="7" x2="12" y2="12.5"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        </div>
+        <p class="eyebrow">Service unavailable</p>
+        <h1 class="section-title">This service is currently pending</h1>
+        <p class="section-sub">This service is not available at the moment, but it's on its way. Subscribe to our newsletter to get notified the moment it goes live.</p>
+        <div class="btn-row">
+          <a href="/index.html#services" class="btn">View All Services</a>
+        </div>
+      </div>
+    </section>
+
+
+  <!-- ====== FOOTER (injected by footer.js) ====== -->
+  <footer id="footerRoot"></footer>
+
+  <!-- ====== ALL SCRIPTS ====== -->
+  <script src="scripts.js" defer></script>
+</body>
+</html>

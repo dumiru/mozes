@@ -1,0 +1,182 @@
+/* ============================================================
+   SUMMIT-2026.CSS
+   Page-specific styles for mozes-summit-2026.html
+   Builds on the design tokens and shared components already
+   defined in styles.css (navbar, footer, buttons, quicknav,
+   pricing-grid, venue-grid, tba-card, summit-hero, etc.)
+   ============================================================ */
+
+/* ---------- SCROLL REVEAL ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ---------- QUICKNAV ACTIVE STATE ---------- */
+.quicknav a.active { color: var(--red); border-bottom-color: var(--red); }
+
+/* ---------- SUMMIT HERO EXTRAS ---------- */
+.summit-hero .hero-scrim {
+  height: 100%;
+  background: linear-gradient(0deg, rgba(10,10,10,.97) 15%, rgba(10,10,10,.72) 50%, rgba(10,10,10,.25) 100%);
+}
+.summit-hero-content { max-width: 720px; }
+.summit-hero-content h1 { margin-bottom: 18px; }
+.summit-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 40px; }
+
+/* Countdown */
+.countdown {
+  display: inline-flex;
+  gap: 14px;
+  padding: 18px 22px;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 12px;
+  background: rgba(20,20,20,.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.countdown .c-unit { text-align: center; min-width: 54px; }
+.countdown .c-num {
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 500;
+  color: #fff;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.countdown .c-label {
+  display: block;
+  margin-top: 6px;
+  font-size: 10.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.65);
+}
+.countdown .c-sep { color: rgba(255,255,255,.3); font-size: 22px; align-self: flex-start; margin-top: 2px; }
+
+/* ---------- DOT-GRID DECORATIVE BACKDROP ---------- */
+.dot-field { position: relative; overflow: hidden; }
+.dot-field::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(231,0,0,.16) 1.4px, transparent 1.4px);
+  background-size: 26px 26px;
+  -webkit-mask-image: radial-gradient(ellipse 60% 55% at 85% 15%, #000 0%, transparent 70%);
+  mask-image: radial-gradient(ellipse 60% 55% at 85% 15%, #000 0%, transparent 70%);
+  pointer-events: none;
+}
+.dot-field > .wrap { position: relative; z-index: 1; }
+
+/* ---------- ABOUT / STAT NOTE ---------- */
+.summit-about .about-lede { max-width: 760px; font-size: 15.5px; line-height: 1.9; color: var(--ink-soft); margin: 0 auto 50px; text-align: center; }
+
+/* ---------- AGENDA ---------- */
+.agenda-tabs {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  margin-bottom: 40px;
+}
+.agenda-tab {
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  padding: 10px 22px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.agenda-tab.active { background: var(--grad); color: #fff; }
+
+.agenda-day { display: none; }
+.agenda-day.active { display: block; }
+
+.agenda-timeline { position: relative; max-width: 780px; }
+.agenda-timeline::before {
+  content: "";
+  position: absolute; left: 84px; top: 6px; bottom: 6px;
+  width: 1px; background: var(--border);
+}
+.agenda-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  gap: 28px;
+  padding: 0 0 34px;
+}
+.agenda-item:last-child { padding-bottom: 0; }
+.agenda-time { font-size: 12.5px; color: var(--ink-soft); padding-top: 2px; text-align: right; white-space: nowrap; }
+.agenda-item::after {
+  content: "";
+  position: absolute; left: 80px; top: 4px;
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--red); border: 3px solid var(--white); box-shadow: 0 0 0 1px var(--border);
+}
+.agenda-body h4 { font-size: 15.5px; font-weight: 500; margin: 0 0 6px; }
+.agenda-body p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.7; margin: 0; }
+.agenda-track { display: inline-block; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--red); margin-top: 8px; }
+
+/* ---------- SPEAKERS NOTE ---------- */
+.speakers-note {
+  text-align: center;
+  max-width: 560px;
+  margin: 44px auto 0;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.8;
+}
+.speakers-note a { color: var(--red); font-weight: 500; }
+
+/* ---------- TICKET GLOW ---------- */
+.price-card.featured { box-shadow: 0 20px 50px rgba(231,0,0,.14); }
+.price-card.featured::before {
+  content: "";
+  position: absolute; inset: -1px;
+  border-radius: 11px;
+  padding: 1px;
+  background: var(--grad);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: .5;
+}
+
+/* ---------- FINAL CTA ---------- */
+.summit-cta {
+  position: relative;
+  overflow: hidden;
+  background: var(--grad);
+  border-radius: var(--radius);
+  padding: 64px 50px;
+  text-align: center;
+}
+.summit-cta .eyebrow { color: rgba(255,255,255,.85); }
+.summit-cta h2 { color: #fff; font-size: clamp(24px, 3.2vw, 34px); font-weight: 400; margin: 0 0 14px; }
+.summit-cta p { color: rgba(255,255,255,.85); font-size: 14.5px; max-width: 520px; margin: 0 auto 30px; line-height: 1.8; }
+.summit-cta .countdown { background: rgba(0,0,0,.2); border-color: rgba(255,255,255,.2); margin-bottom: 30px; }
+.summit-cta .btn.solid { background: #fff; color: var(--red-dark); }
+.summit-cta .btn.solid:hover { background: var(--ink); color: #fff; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 700px) {
+  .countdown { gap: 8px; padding: 14px 16px; }
+  .countdown .c-unit { min-width: 42px; }
+  .countdown .c-sep { font-size: 16px; }
+  .agenda-timeline::before { left: 54px; }
+  .agenda-item { grid-template-columns: 54px 1fr; gap: 16px; }
+  .agenda-item::after { left: 50px; }
+  .summit-cta { padding: 44px 24px; }
+}

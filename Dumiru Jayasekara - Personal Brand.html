@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Dumiru Jayasekara - Entrepreneur and Interactive Product Designer</title>
+<meta name="description" content="Dumiru Jayasekara builds businesses in media, marketing and tech, and designs interactive products.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --orange:#E8590C;
+  --orange-dark:#C2410C;
+  --orange-tint:#FFF4EC;
+  --ink:#1A1A1A;
+  --ink-soft:#5C5752;
+  --line:#EBE5DF;
+  --white:#FFFFFF;
+  --wrap:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:'Poppins',sans-serif;color:var(--ink);background:var(--white);font-size:16px;line-height:1.7;font-weight:300}
+h1,h2,h3,h4{font-weight:500;line-height:1.25;color:var(--ink)}
+h1{font-size:clamp(34px,5vw,56px);font-weight:600;letter-spacing:-.02em}
+h2{font-size:clamp(24px,3vw,32px);letter-spacing:-.01em;margin-bottom:12px}
+h3{font-size:18px}
+p{color:var(--ink-soft)}
+a{color:var(--orange);text-decoration:none}
+a:hover{color:var(--orange-dark)}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+section{padding:88px 0;border-bottom:1px solid var(--line)}
+.section-head{margin-bottom:44px;max-width:620px}
+.section-head p{font-size:15px}
+.btn{display:inline-block;font-family:inherit;font-size:14px;font-weight:500;padding:12px 24px;border-radius:6px;border:1px solid var(--orange);background:var(--orange);color:var(--white);cursor:pointer;transition:background .2s,color .2s}
+.btn:hover{background:var(--orange-dark);border-color:var(--orange-dark);color:var(--white)}
+.btn.outline{background:transparent;color:var(--orange)}
+.btn.outline:hover{background:var(--orange);color:var(--white)}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.card{border:1px solid var(--line);border-radius:8px;padding:28px;background:var(--white)}
+.card p{font-size:14.5px;margin-top:8px}
+.placeholder{background:var(--orange-tint);border:1px dashed #F5C7A6;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--orange-dark);font-size:13px;font-weight:400;text-align:center;padding:16px}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-weight:600;color:var(--ink);font-size:16px}
+.brand span{color:var(--orange)}
+.nav ul{list-style:none;display:flex;gap:22px}
+.nav ul a{color:var(--ink-soft);font-size:14px;font-weight:400}
+.nav ul a:hover{color:var(--orange)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:6px;padding:6px 12px;font-family:inherit;font-size:14px;cursor:pointer;color:var(--ink)}
+
+/* HERO */
+.hero{padding:96px 0 88px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero-role{font-size:15px;color:var(--orange);font-weight:500;margin-bottom:14px}
+.hero h1{margin-bottom:18px}
+.tagline{font-size:18px;color:var(--ink-soft);max-width:520px;margin-bottom:32px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-photo{aspect-ratio:4/5;max-width:380px;width:100%;justify-self:end}
+.hero-photo .placeholder{height:100%;font-size:14px}
+
+/* COMPANIES */
+.company{display:flex;flex-direction:column;gap:6px}
+.company .tag{font-size:12.5px;color:var(--orange);font-weight:500}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.about-grid p{margin-bottom:16px;font-size:15.5px}
+
+/* EXPERTISE */
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;color:var(--ink)}
+
+/* JOURNEY */
+.timeline{list-style:none;border-left:1px solid var(--line);margin-left:6px;max-width:680px}
+.timeline li{padding:0 0 30px 28px;position:relative}
+.timeline li::before{content:"";position:absolute;left:-5px;top:8px;width:9px;height:9px;border-radius:50%;background:var(--orange)}
+.timeline li:last-child{padding-bottom:0}
+.timeline .year{font-size:13px;color:var(--orange);font-weight:500}
+.timeline h3{margin:2px 0 4px}
+.timeline p{font-size:14.5px}
+
+/* NUMBERS */
+.numbers{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:8px}
+.numbers div{padding:32px 24px;border-right:1px solid var(--line)}
+.numbers div:last-child{border-right:none}
+.numbers strong{display:block;font-size:34px;font-weight:600;color:var(--orange);line-height:1.1}
+.numbers span{font-size:14px;color:var(--ink-soft)}
+
+/* GALLERY */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.gallery .placeholder{aspect-ratio:4/3}
+
+/* WORK */
+.work-card .placeholder{aspect-ratio:16/10;margin-bottom:18px}
+.work-card h3{margin-bottom:4px}
+
+/* CONTENT EMBEDS */
+.embed{aspect-ratio:16/9;width:100%}
+.embed-note{font-size:13.5px;margin-top:14px}
+
+/* BLOG */
+.post{display:flex;flex-direction:column;gap:10px}
+.post .placeholder{aspect-ratio:16/10;margin-bottom:10px}
+.post .meta{font-size:12.5px;color:var(--ink-soft)}
+.post h3 a{color:var(--ink)}
+.post h3 a:hover{color:var(--orange)}
+.post p{font-size:14.5px}
+
+/* PRESS */
+.press-logos{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.press-logos div{border:1px solid var(--line);border-radius:8px;height:88px;display:flex;align-items:center;justify-content:center;color:var(--ink-soft);font-size:14px}
+
+/* TESTIMONIALS */
+.quote p{font-size:15px;color:var(--ink);margin-bottom:18px}
+.quote .who{font-size:13.5px;color:var(--ink-soft)}
+.quote .who strong{color:var(--ink);font-weight:500;display:block}
+
+/* PARTNERS */
+.partners{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.partners div{height:64px;border:1px solid var(--line);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13.5px;color:var(--ink-soft)}
+
+/* FAQ */
+.faq{max-width:760px}
+.faq details{border-bottom:1px solid var(--line);padding:18px 0}
+.faq summary{cursor:pointer;font-weight:500;color:var(--ink);list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--orange);font-size:20px;line-height:1}
+.faq details[open] summary::after{content:"-"}
+.faq details p{margin-top:12px;font-size:14.5px}
+
+/* NEWSLETTER */
+.newsletter{background:var(--orange-tint);border-radius:10px;padding:56px 48px;border:none}
+.newsletter .wrap{padding:0}
+.news-form{display:flex;gap:12px;max-width:520px;margin-top:24px;flex-wrap:wrap}
+.news-form input{flex:1;min-width:220px;font-family:inherit;font-size:14.5px;padding:12px 16px;border:1px solid #F0CDB3;border-radius:6px;background:var(--white);color:var(--ink)}
+.news-form input:focus{outline:2px solid var(--orange);outline-offset:1px;border-color:transparent}
+.news-msg{font-size:13.5px;margin-top:12px;color:var(--orange-dark);min-height:20px}
+
+/* CONTACT */
+.contact-row{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.contact-row p{font-size:15px}
+
+/* FOOTER */
+footer{padding:56px 0 32px;background:var(--ink);color:rgba(255,255,255,.7)}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;margin-bottom:40px}
+footer h4{color:var(--white);font-size:14px;margin-bottom:12px;font-weight:500}
+footer ul{list-style:none}
+footer li{margin-bottom:8px}
+footer a{color:rgba(255,255,255,.7);font-size:14px}
+footer a:hover{color:var(--orange)}
+footer .brand{color:var(--white)}
+footer .foot-about{font-size:14px;max-width:340px;margin-top:10px}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:20px;font-size:13px}
+
+/* RESPONSIVE */
+@media (max-width:900px){
+  .hero .wrap,.about-grid{grid-template-columns:1fr;gap:40px}
+  .hero-photo{justify-self:start;max-width:300px}
+  .grid-3,.gallery{grid-template-columns:1fr 1fr}
+  .numbers{grid-template-columns:1fr 1fr}
+  .numbers div:nth-child(2){border-right:none}
+  .numbers div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .partners{grid-template-columns:repeat(3,1fr)}
+  .press-logos{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:700px){
+  section{padding:64px 0}
+  .menu-btn{display:block}
+  .nav ul{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0;background:var(--white);border-bottom:1px solid var(--line);padding:8px 24px 16px}
+  .nav ul.open{display:flex}
+  .nav ul li{padding:10px 0;border-bottom:1px solid var(--line)}
+  .grid-3,.grid-2,.gallery{grid-template-columns:1fr}
+  .partners{grid-template-columns:1fr 1fr}
+  .newsletter{padding:36px 24px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap">
+    <a href="#top" class="brand">Dumiru <span>Jayasekara</span></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav aria-label="Main">
+      <ul id="menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#companies">Companies</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#content">Content</a></li>
+        <li><a href="#case-studies">Case studies</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- 1. HERO -->
+<section class="hero" style="border-bottom:none">
+  <div class="wrap">
+    <div>
+      <p class="hero-role">Entrepreneur and Interactive Product Designer</p>
+      <h1>Dumiru Jayasekara</h1>
+      <p class="tagline">Building businesses in media, marketing and tech, and designing products people enjoy using.</p>
+      <div class="hero-actions">
+        <a href="#companies" class="btn">See what I build</a>
+        <a href="#contact" class="btn outline">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <!-- Replace this div with <img src="your-photo.png" alt="Dumiru Jayasekara"> -->
+      <div class="placeholder" role="img" aria-label="Photo placeholder">Add your PNG photo here</div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-head"><h2>About me</h2></div>
+    <div class="about-grid">
+      <div>
+        <p>I am a young entrepreneur from Sri Lanka. I have started and helped build several businesses, and I am a partner in others.</p>
+        <p>My work sits where media, marketing and technology meet. I care about clear products, honest communication and businesses that last.</p>
+      </div>
+      <div>
+        <p>As an interactive product designer, I design the screens, flows and experiences people use every day, from first idea to final build.</p>
+        <p>Outside work, I write, share what I learn and talk with founders who are building something of their own.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. COMPANIES -->
+<section id="companies">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Companies I build</h2>
+      <p>Businesses I have founded or co-founded, and businesses where I am a partner.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card company">
+        <span class="tag">Media</span>
+        <h3>Company name</h3>
+        <p>One line on what this company does and the problem it solves.</p>
+      </article>
+      <article class="card company">
+        <span class="tag">Marketing</span>
+        <h3>Company name</h3>
+        <p>One line on what this company does and the problem it solves.</p>
+      </article>
+      <article class="card company">
+        <span class="tag">Technology</span>
+        <h3>Company name</h3>
+        <p>One line on what this company does and the problem it solves.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 4. EXPERTISE -->
+<section id="expertise">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What I work on</h2>
+      <p>The skills I use across my businesses and design work.</p>
+    </div>
+    <div class="chips">
+      <span class="chip">Product design</span>
+      <span class="chip">Interaction design</span>
+      <span class="chip">UX research</span>
+      <span class="chip">Brand strategy</span>
+      <span class="chip">Digital marketing</span>
+      <span class="chip">Content creation</span>
+      <span class="chip">Business building</span>
+      <span class="chip">Partnerships</span>
+    </div>
+  </div>
+</section>
+
+<!-- 5. JOURNEY -->
+<section id="journey">
+  <div class="wrap">
+    <div class="section-head"><h2>My journey</h2></div>
+    <ol class="timeline">
+      <li><span class="year">2026</span><h3>Milestone title</h3><p>What happened and why it mattered.</p></li>
+      <li><span class="year">2025</span><h3>Milestone title</h3><p>What happened and why it mattered.</p></li>
+      <li><span class="year">2024</span><h3>Milestone title</h3><p>What happened and why it mattered.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 6. NUMBERS -->
+<section id="numbers">
+  <div class="wrap">
+    <div class="numbers">
+      <div><strong>00</strong><span>Businesses built</span></div>
+      <div><strong>00</strong><span>Partnerships</span></div>
+      <div><strong>00</strong><span>Products designed</span></div>
+      <div><strong>00</strong><span>Content pieces</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. GALLERY -->
+<section id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Gallery</h2>
+      <p>Moments from events, launches and the teams I work with.</p>
+    </div>
+    <div class="gallery">
+      <div class="placeholder">Gallery image</div>
+      <div class="placeholder">Gallery image</div>
+      <div class="placeholder">Gallery image</div>
+      <div class="placeholder">Gallery image</div>
+      <div class="placeholder">Gallery image</div>
+      <div class="placeholder">Gallery image</div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. DESIGN WORK -->
+<section id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Design work</h2>
+      <p>Selected interactive products and interfaces.</p>
+    </div>
+    <div class="grid-2">
+      <article class="work-card">
+        <div class="placeholder">Project screenshot</div>
+        <h3>Project name</h3>
+        <p>A short description of the product and my role.</p>
+      </article>
+      <article class="work-card">
+        <div class="placeholder">Project screenshot</div>
+        <h3>Project name</h3>
+        <p>A short description of the product and my role.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 9. MY CONTENT -->
+<section id="content">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>My content</h2>
+      <p>Videos and talks I have shared.</p>
+    </div>
+    <div class="embed">
+      <!-- Paste your YouTube or podcast embed code here -->
+      <div class="placeholder" style="height:100%">Embed your video here</div>
+    </div>
+    <p class="embed-note">Latest video or podcast episode.</p>
+  </div>
+</section>
+
+<!-- 10. CASE STUDIES -->
+<section id="case-studies">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Case studies and blog</h2>
+      <p>What I learned from building products and businesses.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card post">
+        <div class="placeholder">Cover image</div>
+        <span class="meta">Case study</span>
+        <h3><a href="#">Post title</a></h3>
+        <p>A two-line summary of the problem, the approach and the result.</p>
+      </article>
+      <article class="card post">
+        <div class="placeholder">Cover image</div>
+        <span class="meta">Blog</span>
+        <h3><a href="#">Post title</a></h3>
+        <p>A two-line summary of what this post covers.</p>
+      </article>
+      <article class="card post">
+        <div class="placeholder">Cover image</div>
+        <span class="meta">Blog</span>
+        <h3><a href="#">Post title</a></h3>
+        <p>A two-line summary of what this post covers.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 11. PRESS -->
+<section id="press">
+  <div class="wrap">
+    <div class="section-head"><h2>Press and media</h2></div>
+    <div class="press-logos">
+      <div>Publication</div>
+      <div>Publication</div>
+      <div>Publication</div>
+      <div>Publication</div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. TESTIMONIALS -->
+<section id="testimonials">
+  <div class="wrap">
+    <div class="section-head"><h2>What people say</h2></div>
+    <div class="grid-2">
+      <figure class="card quote">
+        <p>"A short quote from a partner, client or team member."</p>
+        <figcaption class="who"><strong>Name</strong>Role, Company</figcaption>
+      </figure>
+      <figure class="card quote">
+        <p>"A short quote from a partner, client or team member."</p>
+        <figcaption class="who"><strong>Name</strong>Role, Company</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 13. PARTNERS -->
+<section id="partners">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Partners</h2>
+      <p>Organisations I work with.</p>
+    </div>
+    <div class="partners">
+      <div>Partner</div><div>Partner</div><div>Partner</div><div>Partner</div><div>Partner</div>
+    </div>
+  </div>
+</section>
+
+<!-- 14. FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head"><h2>Questions</h2></div>
+    <div class="faq">
+      <details>
+        <summary>Are you open to partnerships?</summary>
+        <p>Yes. I work with founders and businesses in media, marketing and technology. Reach out through the contact section.</p>
+      </details>
+      <details>
+        <summary>Do you take design projects?</summary>
+        <p>I take a small number of product design projects alongside my own businesses. Send a short brief and I will reply.</p>
+      </details>
+      <details>
+        <summary>Can I invite you to speak?</summary>
+        <p>Yes, for topics on entrepreneurship, product design and marketing. Include the event date and audience.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 15. NEWSLETTER -->
+<section id="newsletter" class="newsletter" style="border-bottom:none;margin:0 24px 0;">
+  <div class="wrap">
+    <h2>Email newsletter</h2>
+    <p>Short notes on building businesses, design and marketing. One email, when there is something worth sharing.</p>
+    <form class="news-form" id="newsForm">
+      <label for="email" class="sr-only" style="position:absolute;left:-9999px">Email address</label>
+      <input type="email" id="email" name="email" placeholder="Your email address" required>
+      <button type="submit" class="btn">Subscribe</button>
+    </form>
+    <p class="news-msg" id="newsMsg" role="status" aria-live="polite"></p>
+  </div>
+</section>
+
+<!-- 16. CONTACT -->
+<section id="contact">
+  <div class="wrap contact-row">
+    <div>
+      <h2>Contact</h2>
+      <p>For partnerships, speaking and design work.</p>
+    </div>
+    <a href="mailto:hello@example.com" class="btn">Email me</a>
+  </div>
+</section>
+
+</main>
+
+<!-- 17. FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#top" class="brand">Dumiru <span>Jayasekara</span></a>
+        <p class="foot-about">Entrepreneur and interactive product designer, building in media, marketing and tech.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#companies">Companies</a></li>
+          <li><a href="#work">Design work</a></li>
+          <li><a href="#case-studies">Case studies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#newsletter">Newsletter</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">&copy; 2026 Dumiru Jayasekara. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn = document.querySelector('.menu-btn');
+  var menu = document.getElementById('menu');
+  btn.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  var form = document.getElementById('newsForm');
+  var msg = document.getElementById('newsMsg');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var value = form.email.value.trim();
+    msg.textContent = value ? 'Thanks, you are subscribed.' : 'Please enter a valid email.';
+    if (value) form.reset();
+  });
+})();
+</script>
+</body>
+</html>
